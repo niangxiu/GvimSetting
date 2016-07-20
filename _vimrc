@@ -74,7 +74,7 @@ endif
 set ruler
 
 " Height of the command bar
-set cmdheight=1
+set cmdheight=2
 
 " A buffer becomes hidden when it is abandoned
 set hid
@@ -177,7 +177,7 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 " => Status line
 """"""""""""""""""""""""""""""
 " Always show the status line
-set laststatus=1
+set laststatus=2
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -188,19 +188,23 @@ set number
 
 " maximize window size
 if has("gui_running")
-  " GUI is running or is about to start.
-  " Maximize gvim window (for an alternative on Windows, see simalt below).
-  set lines=999 columns=999
+    " GUI is running or is about to start.
+    " Maximize gvim window (for an alternative on Windows, see simalt below).
+    set lines=999 columns=999
 else
-  " This is console Vim.
-  if exists("+lines")
-    set lines=500
-  endif
-  if exists("+columns")
-    set columns=1000
-  endif
+    " This is console Vim.
+    if exists("+lines")
+        set lines=500
+    endif
+    if exists("+columns")
+        set columns=1000
+    endif
 endif
 
+
+" set short message
+" set shortmess=a
+" silent !echo Hello
 
 augroup vimrc
   au BufReadPre * setlocal foldmethod=indent
@@ -214,3 +218,4 @@ inoremap <A-l> <C-o>l
 inoremap <A-x> <C-o>x
 inoremap <A-a> <C-o>A
 nnoremap <A-a> A
+
