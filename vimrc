@@ -1,8 +1,4 @@
 set nocompatible
-"source $VIMRUNTIME/vimrc_example.vim
-"source $VIMRUNTIME/mswin.vim
-source mswin.vim
-behave mswin
 execute pathogen#infect()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -178,6 +174,23 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 """"""""""""""""""""""""""""""
 " Always show the status line
 set laststatus=2
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => behave like windows
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" backspace in Visual mode deletes selection
+vnoremap <BS> d
+
+" Use CTRL-S for saving, also in Insert mode
+noremap <C-S>		:update<CR>
+vnoremap <C-S>		<C-C>:update<CR>
+inoremap <C-S>		<C-O>:update<CR>
+
+" CTRL-Z is Undo; not in cmdline though
+noremap <C-Z> u
+inoremap <C-Z> <C-O>u
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
