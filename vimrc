@@ -1,10 +1,8 @@
 set nocompatible
 "source $VIMRUNTIME/vimrc_example.vim
 "source $VIMRUNTIME/mswin.vim
-if system("uname") != "Linux"
-    source mswin.vim
-    behave mswin
-endif
+source mswin.vim
+behave mswin
 execute pathogen#infect()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
