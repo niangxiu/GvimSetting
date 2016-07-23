@@ -1,9 +1,9 @@
 set nocompatible
-source $VIMRUNTIME/vimrc_example.vim
-source $VIMRUNTIME/mswin.vim
+"source $VIMRUNTIME/vimrc_example.vim
+"source $VIMRUNTIME/mswin.vim
+source mswin.vim
 behave mswin
 execute pathogen#infect()
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " mydiff() 
@@ -194,10 +194,10 @@ if has("gui_running")
 else
     " This is console Vim.
     if exists("+lines")
-        set lines=500
+        set lines=30
     endif
     if exists("+columns")
-        set columns=1000
+        set columns=50
     endif
 endif
 
