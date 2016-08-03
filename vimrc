@@ -183,16 +183,6 @@ set laststatus=2
 " backspace in Visual mode deletes selection
 vnoremap <BS> d
 
-" Use CTRL-S for saving, also in Insert mode
-noremap <C-S>		:update<CR>
-vnoremap <C-S>		<C-C>:update<CR>
-inoremap <C-S>		<C-O>:update<CR>
-
-" CTRL-Z is Undo; not in cmdline though
-noremap <C-Z> u
-inoremap <C-Z> <C-O>u
-
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => my misc setting
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -220,7 +210,7 @@ endif
 " silent !echo Hello
 
 augroup vimrc
-  au BufReadPre * setlocal foldmethod=indent
+  au BufReadPre * setlocal foldmethod=manual "indent
   au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
 augroup END
 
@@ -232,3 +222,5 @@ inoremap <A-x> <C-o>x
 inoremap <A-a> <C-o>A
 nnoremap <A-a> A
 
+" set uniform clipboard
+set clipboard=unnamedplus
