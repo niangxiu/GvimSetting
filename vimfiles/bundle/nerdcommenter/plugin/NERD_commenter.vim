@@ -64,6 +64,7 @@ call s:InitVariable("g:NERDRemoveExtraSpaces", 0)
 call s:InitVariable("g:NERDRPlace", "<]")
 call s:InitVariable("g:NERDSpaceDelims", 0)
 call s:InitVariable("g:NERDDefaultAlign", "none")
+call s:InitVariable("g:NERDTrimTrailingWhitespace", 0)
 
 let s:NERDFileNameEscape="[]#*$%'\" ?`!&();<>\\"
 
@@ -204,6 +205,7 @@ let s:delimiterMap = {
     \ 'hb': { 'left': '#' },
     \ 'hbs': { 'left': '{{!-- ', 'right': ' --}}' },
     \ 'hercules': { 'left': '//', 'leftAlt': '/*', 'rightAlt': '*/' },
+    \ 'hive': { 'left': '-- ' },
     \ 'hog': { 'left': '#' },
     \ 'hostsaccess': { 'left': '#' },
     \ 'htmlcheetah': { 'left': '##' },
@@ -1419,6 +1421,15 @@ function s:RecoverStateAfterLineComment(state)
     endif
 endfunction
 
+" Function: s:TrimTrailingWhitespace(line) {{{2
+" This function removes all the trailing whitespace
+" Args:
+"   -line: the target line
+function s:TrimTrailingWhitespace(line)
+    let toReturn = substitute(a:line, '\s\+$', '', 'g')
+    return toReturn
+endfunction
+
 " Function: s:UncommentLines(topLine, bottomLine) {{{2
 " This function uncomments the given lines
 "
@@ -1510,6 +1521,10 @@ function s:UncommentLinesSexy(topline, bottomline)
         let theLine = s:SwapOuterPlaceHoldersForMultiPartDelims(theLine)
 
         let theLine = s:ConvertLeadingWhiteSpace(theLine)
+
+        if g:NERDTrimTrailingWhitespace == 1
+            let theLine = s:TrimTrailingWhitespace(theLine)
+        endif
 
         " move onto the next line
         call setline(currentLine, theLine)
@@ -1651,6 +1666,10 @@ function s:UncommentLineNormal(line)
     endif
 
     let line = s:ConvertLeadingWhiteSpace(line)
+
+    if g:NERDTrimTrailingWhitespace == 1
+        let line = s:TrimTrailingWhitespace(line)
+    endif
 
     return line
 endfunction
