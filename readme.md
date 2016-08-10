@@ -9,3 +9,7 @@ git pull --recurse-submodules
 
 if have trouble update submodules, use:
 git rm --cached modulename
+
+to add a new submodule, use:
+git submodule add https://....git
+Then change the directory of the .gitmodule file, and delete the current repo in the root
