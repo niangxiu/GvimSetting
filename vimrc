@@ -189,11 +189,16 @@ vnoremap <BS> d
 " Display line numbers on the left
 set number
 
-" maximize window size
+" maximize window size and set guifonts
 if has("gui_running")
     " GUI is running or is about to start.
     " Maximize gvim window (for an alternative on Windows, see simalt below).
     set lines=999 columns=999
+    set guioptions-=m
+    set guioptions-=T
+    set guioptions-=r
+    set guioptions-=L
+    set guifont=consolas:h11
 else
     " This is console Vim.
     if exists("+lines")
@@ -223,4 +228,8 @@ inoremap <A-a> <C-o>A
 nnoremap <A-a> A
 
 " set uniform clipboard
-set clipboard=unnamedplus
+if has("unix")
+    set clipboard=unnamedplus
+elseif has("win32")
+    set clipboard=unnamed
+endif
