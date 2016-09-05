@@ -198,7 +198,7 @@ if has("gui_running")
     set guioptions-=T
     set guioptions-=r
     set guioptions-=L
-    set guifont=consolas:h11
+    set guifont=consolas:h12
 else
     " This is console Vim.
     if exists("+lines")
