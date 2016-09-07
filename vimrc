@@ -199,14 +199,14 @@ if has("gui_running")
     set guioptions-=r
     set guioptions-=L
     set guifont=consolas:h12
-else
-    " This is console Vim.
-    if exists("+lines")
-        set lines=50
-    endif
-    if exists("+columns")
-        set columns=100
-    endif
+"else
+    "" This is console Vim.
+    "if exists("+lines")
+        "set lines=50
+    "endif
+    "if exists("+columns")
+        "set columns=100
+    "endif
 endif
 
 
