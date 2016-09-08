@@ -22,3 +22,7 @@
 [submodule "vim-snipptes"]
     path = "vimfiles/bundle/vim-snippets"
     url = https://github.com/honza/vim-snippets.git
+
+[submodule "vim-yankstack"]
+    path = "vimfiles/bundle/vim-yankstack"
+    url = https://github.com/maxbrunsfeld/vim-yankstack.git 
