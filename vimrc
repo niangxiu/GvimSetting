@@ -224,8 +224,8 @@ inoremap <A-j> <C-o>j
 inoremap <A-k> <C-o>k
 inoremap <A-l> <C-o>l
 inoremap <A-x> <C-o>x
-inoremap <A-a> <C-o>A
-nnoremap <A-a> A
+inoremap <C-a> <C-o>A
+nnoremap <C-a> A
 
 " set uniform clipboard
 if has("unix")
