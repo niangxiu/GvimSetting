@@ -216,3 +216,6 @@ map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<CR>
 " set snipmate shortcut
 imap <C-J> <Plug>snipMateNextOrTrigger
 smap <C-J> <Plug>snipMateNextOrTrigger
+
+" set supertab selection
+let g:SuperTabCrMapping = 1
