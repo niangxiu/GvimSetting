@@ -211,3 +211,5 @@ nmap <leader>P <Plug>yankstack_substitute_newer_paste
 let g:yankstack_map_keys = 0
 
 map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<CR>
+
+autocmd FileType tex :AcpDisable
