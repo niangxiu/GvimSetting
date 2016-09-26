@@ -219,3 +219,6 @@ smap <C-J> <Plug>snipMateNextOrTrigger
 
 " set supertab selection
 let g:SuperTabCrMapping = 1
+
+" set autopairs of $$
+let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`', '$':'$'}
