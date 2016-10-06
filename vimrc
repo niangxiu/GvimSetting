@@ -171,31 +171,24 @@ if has("gui_running")
     set guioptions-=r
     set guioptions-=L
     set guifont=consolas:h12
-"else
-    "" This is console Vim.
-    "if exists("+lines")
-        "set lines=50
-    "endif
-    "if exists("+columns")
-        "set columns=100
-    "endif
 endif
-
 
 " set short message
 " set shortmess=a
 " silent !echo Hello
 
+" set indent
 augroup vimrc
   au BufReadPre * setlocal foldmethod=manual "indent
   au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
 augroup END
 
-inoremap <A-h> <C-o>h
-inoremap <A-j> <C-o>j
-inoremap <A-k> <C-o>k
-inoremap <A-l> <C-o>l
-inoremap <A-x> <C-o>x
+" motion key in insert mode
+"inoremap <A-h> <C-o>h
+"inoremap <A-j> <C-o>j
+"inoremap <A-k> <C-o>k
+"inoremap <A-l> <C-o>l
+"inoremap <A-x> <C-o>x
 inoremap <C-a> <C-o>A
 nnoremap <C-a> A
 
@@ -206,6 +199,7 @@ elseif has("win32")
     set clipboard=unnamed
 endif
 
+" yank stack shortcut
 nmap <leader>p <Plug>yankstack_substitute_older_paste
 nmap <leader>P <Plug>yankstack_substitute_newer_paste
 let g:yankstack_map_keys = 0
