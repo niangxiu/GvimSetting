@@ -182,11 +182,14 @@ endif
 " set shortmess=a
 " silent !echo Hello
 
-" set indent
+" set folding
 augroup vimrc
   au BufReadPre * setlocal foldmethod=manual "indent
   au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
 augroup END
+if &diff                             " only for diff mode/vimdiff
+  set diffopt=filler,context:1000000 " filler is default and inserts empty lines for sync
+endif
 
 " motion key in insert mode
 "inoremap <A-h> <C-o>h
