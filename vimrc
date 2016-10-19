@@ -224,3 +224,6 @@ let g:SuperTabCrMapping = 1
 
 " set autopairs of $$
 let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`', '$':'$'}
+
+" no .un~ files
+:set noundofile
