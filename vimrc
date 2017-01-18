@@ -1,5 +1,5 @@
 if has("win32")
-    source $VIMRUNTIME/vimrc_example.vim
+    "source $VIMRUNTIME/vimrc_example.vim
     source $VIMRUNTIME/mswin.vim
     behave mswin
 endif
@@ -131,12 +131,14 @@ set shiftwidth=4
 set softtabstop=4
 
 " Linebreak on 500 characters
-set lbr
-set tw=500
+set wrap "Wrap lines
+set linebreak
+set nolist
+set textwidth=0
+set wrapmargin=0
 
 set ai "Auto indent
 set si "Smart indent
-set wrap "Wrap lines
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
