@@ -241,4 +241,5 @@ autocmd BufNewFile,BufRead *.cpp,*.hpp set shiftwidth=2 softtabstop=2
 " set full screen toggle for windows
 map <F3> <Esc>:NERDTree<CR>B
 
-
+" spell check on .txt files
+autocmd BufNewFile,BufRead *.txt set spell spelllang=en_us 
