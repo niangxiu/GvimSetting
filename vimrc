@@ -128,7 +128,7 @@ set smarttab
 
 " 1 tab == 4 spaces
 set shiftwidth=4
-set tabstop=4
+set softtabstop=4
 
 " Linebreak on 500 characters
 set lbr
@@ -222,8 +222,21 @@ smap <C-J> <Plug>snipMateNextOrTrigger
 " set supertab selection
 let g:SuperTabCrMapping = 1
 
-" set autopairs of $$
-let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`', '$':'$'}
+" set autopairs of $$ when opening a .tex file
+autocmd BufNewFile,BufRead *.tex let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`', '$':'$'}
+
+" set indent when opening a .cpp .hpp file
+" 1 tab == 2 spaces
+autocmd BufNewFile,BufRead *.cpp,*.hpp set shiftwidth=2 softtabstop=2
 
 " no .un~ files
 :set noundofile
+
+" enable mouse to drag window
+:set mouse=n
+:set ttymouse=xterm2
+
+" set full screen toggle for windows
+map <F3> <Esc>:NERDTree<CR>B
+
+
