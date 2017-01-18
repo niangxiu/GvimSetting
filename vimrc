@@ -242,4 +242,4 @@ autocmd BufNewFile,BufRead *.cpp,*.hpp set shiftwidth=2 softtabstop=2
 map <F3> <Esc>:NERDTree<CR>B
 
 " spell check on .txt files
-autocmd BufNewFile,BufRead *.txt set spell spelllang=en_us 
+autocmd BufNewFile,BufRead *.tex,*.txt set spell spelllang=en_us 
