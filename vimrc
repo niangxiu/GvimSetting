@@ -243,3 +243,6 @@ map <F3> <Esc>:NERDTree<CR>B
 
 " spell check on .txt files
 autocmd BufNewFile,BufRead *.tex,*.txt set spell spelllang=en_us 
+
+" If doing a diff. Upon writing changes to file, automatically update the differences
+autocmd BufWritePost * if &diff == 1 | diffupdate | endif
