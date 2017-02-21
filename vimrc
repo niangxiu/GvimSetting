@@ -246,3 +246,10 @@ autocmd BufNewFile,BufRead *.tex,*.txt set spell spelllang=en_us
 
 " If doing a diff. Upon writing changes to file, automatically update the differences
 autocmd BufWritePost * if &diff == 1 | diffupdate | endif
+
+" Allow us to use Ctrl-s and Ctrl-q as keybinds
+" Restore default behaviour when leaving Vim.
+if has ("unix")
+    silent !stty -ixon
+    autocmd VimLeave * silent !stty ixon
+endif
