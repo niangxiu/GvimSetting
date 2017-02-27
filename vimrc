@@ -249,3 +249,8 @@ if has ("unix")
     silent !stty -ixon
     autocmd VimLeave * silent !stty ixon
 endif
+
+" Run checktime when gain focus or enter buffer, but avoiding the "Command Line" (q:) window
+au FocusGained,BufEnter * if getcmdwintype() == '' | checktime | endif
+" save when exiting the buffer or losing focus
+au FocusLost,WinLeave * : w
