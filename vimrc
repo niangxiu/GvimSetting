@@ -252,5 +252,5 @@ endif
 
 " Run checktime when gain focus or enter buffer, but avoiding the "Command Line" (q:) window
 au FocusGained,BufEnter * checktime
-" save when exiting the buffer or losing focus
-au FocusLost,WinLeave * : w
+ "save when exiting the buffer or losing focus
+"au FocusLost,WinLeave * : w
