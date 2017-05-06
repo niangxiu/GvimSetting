@@ -173,7 +173,7 @@ if has("gui_running")
     set guioptions-=T
     set guioptions-=r
     set guioptions-=L
-    set guifont=consolas:h12
+    set guifont=consolas:h10
 endif
 
 " set short message
@@ -252,5 +252,9 @@ endif
 
 " Run checktime when gain focus or enter buffer, but avoiding the "Command Line" (q:) window
 au FocusGained,BufEnter * checktime
- "save when exiting the buffer or losing focus
+" save when exiting the buffer or losing focus
 "au FocusLost,WinLeave * : w
+
+
+" set wrap in vimdiff
+autocmd FilterWritePre * if &diff | setlocal wrap< | endif
