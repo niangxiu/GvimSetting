@@ -255,6 +255,10 @@ au FocusGained,BufEnter * checktime
 " save when exiting the buffer or losing focus
 "au FocusLost,WinLeave * : w
 
-
 " set wrap in vimdiff
 autocmd FilterWritePre * if &diff | setlocal wrap< | endif
+
+" Use CTRL-S for saving, also in Insert mode
+noremap <C-S>		:update<CR><Esc>
+vnoremap <C-S>		<C-C>:update<CR><Esc>
+inoremap <C-S>		<C-O>:update<CR><Esc>
