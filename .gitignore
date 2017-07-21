@@ -1,6 +1,7 @@
 *~
 *.swp
 vim74/
+vim80/
 addons/
 registry/
 *.bak
