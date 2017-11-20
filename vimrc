@@ -222,6 +222,8 @@ let g:SuperTabCrMapping = 1
 
 " set autopairs of $$ when opening a .tex file
 autocmd BufNewFile,BufRead *.tex let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`', '$':'$'}
+" set autopairs of <> when opening a .html file
+autocmd BufNewFile,BufRead *.tex let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`', '<':'>'}
 
 " set indent when opening a .cpp .hpp file
 " 1 tab == 2 spaces
