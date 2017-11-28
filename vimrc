@@ -134,8 +134,6 @@ set textwidth=0
 set wrapmargin=0
 
 set ai "Auto indent
-set si "Smart indent
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Moving around, tabs, windows and buffers
