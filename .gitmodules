@@ -1,19 +1,19 @@
 [submodule "nerdtree"]
-	path = "vimfiles/bundle/nerdtree"
+    path = "vimfiles/bundle/nerdtree"
     url = https://github.com/scrooloose/nerdtree.git
 
 [submodule "supertab"]
-	path = "vimfiles/bundle/supertab"
-	url = https://github.com/ervandew/supertab.git
+    path = "vimfiles/bundle/supertab"
+    url = https://github.com/ervandew/supertab.git
 
+;the next 4 plugins are all for supporting snipmate
 [submodule "tlib_vim"]
-	path = "vimfiles/bundle/tlib_vim"
+    path = "vimfiles/bundle/tlib_vim"
     url = https://github.com/tomtom/tlib_vim.git
 
 [submodule "vim-snipmate"]
     path = "vimfiles/bundle/vim-snipmate"
     url = https://github.com/garbas/vim-snipmate.git
-
 
 [submodule "vim-addon-mw-utils"]
     path = "vimfiles/bundle/vim-addon-mw-utils"
@@ -26,3 +26,7 @@
 [submodule "vim-yankstack"]
     path = "vimfiles/bundle/vim-yankstack"
     url = https://github.com/maxbrunsfeld/vim-yankstack.git 
+
+[submodule "vim-latex"]
+    path = "vimfiles/bundle/vim-latex"
+    url = https://github.com/vim-latex/vim-latex.git
