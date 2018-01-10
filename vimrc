@@ -167,7 +167,7 @@ if has("gui_running")
     " GUI is running or is about to start.
     " Maximize gvim window (for an alternative on Windows, see simalt below).
     set lines=999 columns=999
-    set guioptions-=m
+    "set guioptions-=m
     set guioptions-=T
     set guioptions-=r
     set guioptions-=L
@@ -209,7 +209,7 @@ nmap <leader>P <Plug>yankstack_substitute_newer_paste
 let g:yankstack_map_keys = 0
 
 " set full screen toggle for windows
-map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<CR>
+map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0) \| :set guioptions-=m<CR>
 
 " set snipmate shortcut
 imap <C-J> <Plug>snipMateNextOrTrigger
