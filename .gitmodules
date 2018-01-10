@@ -27,6 +27,6 @@
     path = "vimfiles/bundle/vim-yankstack"
     url = https://github.com/maxbrunsfeld/vim-yankstack.git 
 
-[submodule "vimfiles/bundle/vim-latex"]
-    path = vimfiles/bundle/vim-latex
-    url = https://github.com/vim-latex/vim-latex.git
+[submodule "vimtex"]
+	path = vimfiles/bundle/vimtex
+	url = https://github.com/lervag/vimtex.git

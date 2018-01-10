@@ -234,7 +234,7 @@ autocmd BufNewFile,BufRead *.cpp,*.hpp set shiftwidth=2 softtabstop=2
 
 " set full screen toggle for windows
 map <F3> <Esc>:NERDTree<CR>B
-let NERDTreeIgnore = ['\.pyc$', '\.png$', '\.p$', '\.dll$']
+let NERDTreeIgnore = ['\.pyc$', '\.png$', '\.p$', '\.dll$', '\.aux$', '\.log$', '\.blg$', '\.fls$', '\.spl$', '\.fdb_latexmk$', '\.synctex$', '\.synctex.gz$', '\.out$', '\.bbl$', ]
 
 " spell check on .txt files
 autocmd BufNewFile,BufRead *.tex,*.txt set spell spelllang=en_us 
@@ -262,7 +262,6 @@ noremap <C-S>		:update<CR><Esc>
 vnoremap <C-S>		<C-C>:update<CR><Esc>
 inoremap <C-S>		<C-O>:update<CR><Esc>
 
-
 " configurations for latex:
 " set autopairs of $$ when opening a .tex file
 autocmd BufNewFile,BufRead *.tex let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`', '$':'$'}
@@ -274,16 +273,15 @@ autocmd BufNewFile,BufRead *.tex set shiftwidth=2 softtabstop=2
 " all the figure labels. Very useful!
 autocmd BufNewFile,BufRead *.tex set iskeyword+=:
 
-" configuration for vim-latex
-" IMPORTANT: win32 users will need to have 'shellslash' set so that latex
-" can be called correctly.
-set shellslash
-" IMPORTANT: grep will sometimes skip displaying the file name if you
-" search in a singe file. This will confuse Latex-Suite. Set your grep
-" program to always generate a file-name.
-set grepprg=grep\ -nH\ $*
-" OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
-" 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
-" The following changes the default filetype back to 'tex':
-let g:tex_flavor='latex'
+" configuration for vimtex
+let g:vimtex_view_general_viewer = 'SumatraPDF'
+let g:vimtex_view_general_options
+    \ = '-reuse-instance -forward-search @tex @line @pdf'
+let g:vimtex_view_general_options_latexmk = '-reuse-instance'
+let g:vimtex_quickfix_latexlog = {
+          \ 'overfull' : 0,
+          \ 'underfull' : 0,
+          \}
 
+" help doc
+:helptags C:\Program\Vim\vimfiles\bundle\vimtex\doc\
