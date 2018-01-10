@@ -2,10 +2,6 @@
     path = "vimfiles/bundle/nerdtree"
     url = https://github.com/scrooloose/nerdtree.git
 
-[submodule "supertab"]
-    path = "vimfiles/bundle/supertab"
-    url = https://github.com/ervandew/supertab.git
-
 ;the next 4 plugins are all for supporting snipmate
 [submodule "tlib_vim"]
     path = "vimfiles/bundle/tlib_vim"
@@ -29,4 +25,8 @@
 
 [submodule "vimtex"]
 	path = vimfiles/bundle/vimtex
-	url = https://github.com/lervag/vimtex.git
+    url = https://github.com/lervag/vimtex.git
+
+[submodule "vimfiles/bundle/vimcompletesme"]
+	path = vimfiles/bundle/vimcompletesme
+	url = https://github.com/ajh17/VimCompletesMe.git

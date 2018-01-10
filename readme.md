@@ -9,3 +9,7 @@ if have trouble update submodules, use:
 git rm --cached modulename
 
 to add a new submodule, change .gitmodule file
+
+for the vimtex to run,
+first install latexmk from miktex
+then install activePerl

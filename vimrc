@@ -216,7 +216,7 @@ imap <C-J> <Plug>snipMateNextOrTrigger
 smap <C-J> <Plug>snipMateNextOrTrigger
 
 " set supertab selection
-let g:SuperTabCrMapping = 1
+"let g:SuperTabCrMapping = 1
 
 " set autopairs of <> when opening a .html file
 autocmd BufNewFile,BufRead *.html let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`', '<':'>'}
@@ -285,3 +285,16 @@ let g:vimtex_quickfix_latexlog = {
 
 " help doc
 :helptags C:\Program\Vim\vimfiles\bundle\vimtex\doc\
+:helptags C:\Program\Vim\vimfiles\bundle\vimcompletesme\doc\
+:helptags C:\Program\Vim\vimfiles\bundle\vim-snipmate\doc
+:helptags C:\Program\Vim\vimfiles\bundle\nerdcommenter\doc\
+:helptags C:\Program\Vim\vimfiles\bundle\nerdtree\doc\
+:helptags C:\Program\Vim\vimfiles\bundle\vim-yankstack\\doc\
+
+" for vimcompletsme
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+augroup VimCompletesMeTex
+    autocmd!
+    autocmd FileType tex
+        \ let b:vcm_omni_pattern = g:vimtex#re#neocomplete
+augroup END
