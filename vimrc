@@ -211,13 +211,6 @@ let g:yankstack_map_keys = 0
 " set full screen toggle for windows
 map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0) \| :set guioptions-=m<CR>
 
-" set snipmate shortcut
-imap <C-J> <Plug>snipMateNextOrTrigger
-smap <C-J> <Plug>snipMateNextOrTrigger
-
-" set supertab selection
-"let g:SuperTabCrMapping = 1
-
 " set autopairs of <> when opening a .html file
 autocmd BufNewFile,BufRead *.html let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`', '<':'>'}
 
@@ -282,11 +275,13 @@ let g:vimtex_quickfix_latexlog = {
           \ 'overfull' : 0,
           \ 'underfull' : 0,
           \}
+let g:vimtex_compiler_latexmk = {
+    \ 'continuous' : 0,
+    \}
 
 " help doc
 :helptags C:\Program\Vim\vimfiles\bundle\vimtex\doc\
 :helptags C:\Program\Vim\vimfiles\bundle\vimcompletesme\doc\
-:helptags C:\Program\Vim\vimfiles\bundle\vim-snipmate\doc
 :helptags C:\Program\Vim\vimfiles\bundle\nerdcommenter\doc\
 :helptags C:\Program\Vim\vimfiles\bundle\nerdtree\doc\
 :helptags C:\Program\Vim\vimfiles\bundle\vim-yankstack\\doc\
