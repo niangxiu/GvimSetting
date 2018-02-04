@@ -82,7 +82,7 @@ set t_vb=
 set tm=500
 
 " Add a bit extra margin to the left
-set foldcolumn=1
+"set foldcolumn=1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
@@ -167,11 +167,11 @@ if has("gui_running")
     " GUI is running or is about to start.
     " Maximize gvim window (for an alternative on Windows, see simalt below).
     set lines=999 columns=999
-    "set guioptions-=m
+    set guioptions-=m
     set guioptions-=T
     set guioptions-=r
     set guioptions-=L
-    set guifont=consolas:h10
+    set guifont=consolas:h12
 endif
 
 " set short message
@@ -193,7 +193,7 @@ endif
 "inoremap <A-k> <C-o>k
 "inoremap <A-l> <C-o>l
 "inoremap <A-x> <C-o>x
-inoremap <C-a> <C-o>A
+inoremap <C-a> <Esc>A
 nnoremap <C-a> A
 
 " set uniform clipboard
@@ -209,7 +209,8 @@ nmap <leader>P <Plug>yankstack_substitute_newer_paste
 let g:yankstack_map_keys = 0
 
 " set full screen toggle for windows
-map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0) \| :set guioptions-=m<CR>
+"map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0) \| :set guioptions-=m<CR>
+map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0) <CR>
 
 " set autopairs of <> when opening a .html file
 autocmd BufNewFile,BufRead *.html let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`', '<':'>'}
@@ -228,6 +229,7 @@ autocmd BufNewFile,BufRead *.cpp,*.hpp set shiftwidth=2 softtabstop=2
 " set full screen toggle for windows
 map <F3> <Esc>:NERDTree<CR>B
 let NERDTreeIgnore = ['\.pyc$', '\.png$', '\.p$', '\.dll$', '\.aux$', '\.log$', '\.blg$', '\.fls$', '\.spl$', '\.fdb_latexmk$', '\.synctex$', '\.synctex.gz$', '\.out$', '\.bbl$', ]
+let NERDTreeQuitOnOpen=1
 
 " spell check on .txt files
 autocmd BufNewFile,BufRead *.tex,*.txt set spell spelllang=en_us 
@@ -252,12 +254,12 @@ autocmd FilterWritePre * if &diff | setlocal wrap< | endif
 
 " Use CTRL-S for saving, also in Insert mode
 noremap <C-S>		:update<CR><Esc>
-vnoremap <C-S>		<C-C>:update<CR><Esc>
-inoremap <C-S>		<C-O>:update<CR><Esc>
+vnoremap <C-S>		<Esc>:update<CR><Esc>
+inoremap <C-S>		<Esc>:update<CR><Esc>
 
 " configurations for latex:
 " set autopairs of $$ when opening a .tex file
-autocmd BufNewFile,BufRead *.tex let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`', '$':'$'}
+autocmd BufNewFile,BufRead *.tex let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', "`":"'", '$':'$'}
 " this is mostly a matter of taste. but LaTeX looks good with just a bit
 " of indentation.
 autocmd BufNewFile,BufRead *.tex set shiftwidth=2 softtabstop=2
@@ -275,9 +277,6 @@ let g:vimtex_quickfix_latexlog = {
           \ 'overfull' : 0,
           \ 'underfull' : 0,
           \}
-let g:vimtex_compiler_latexmk = {
-    \ 'continuous' : 0,
-    \}
 
 " help doc
 :helptags C:\Program\Vim\vimfiles\bundle\vimtex\doc\
