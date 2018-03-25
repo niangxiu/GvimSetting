@@ -1,0 +1,31 @@
+# equations
+snippet eq
+    \begin{equation}
+        ${1:TARGET}
+    \end{equation}
+
+# unlabeled equation
+snippet equ
+    \begin{equation*}
+        ${1:TARGET}
+    \end{equation*}
+
+# equation unlabeled with split
+snippet equs
+alias eqsu
+    \begin{equation*} \begin{split}
+        ${1:TARGET}
+    \end{split} \end{equation*}
+
+# labeled equation
+snippet eql
+    \begin{equation} \label{e:${1:TARGET}}
+        ${2:TARGET}
+    \end{equation}
+
+# labeled equation with split
+snippet eqls
+alias eqsl
+    \begin{equation} \begin{split} \label{e:${1:TARGET}}
+        ${2:TARGET}
+    \end{split} \end{equation}

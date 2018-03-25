@@ -284,7 +284,7 @@ let g:vimtex_quickfix_latexlog = {
 :helptags C:\Program\Vim\vimfiles\bundle\nerdcommenter\doc\
 :helptags C:\Program\Vim\vimfiles\bundle\nerdtree\doc\
 :helptags C:\Program\Vim\vimfiles\bundle\vim-yankstack\doc\
-:helptags C:\Program\Vim\vimfiles\bundle\ultisnips\doc\
+:helptags C:\Program\Vim\vimfiles\bundle\neosnippet\doc
 
 " for vimcompletsme
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
@@ -293,3 +293,12 @@ augroup VimCompletesMeTex
     autocmd FileType tex
         \ let b:vcm_omni_pattern = g:vimtex#re#neocomplete
 augroup END
+
+
+" Plugin key-mappings.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+let g:neosnippet#snippets_directory = "$VIM/vimfiles/bundle/mysnippets"
+
