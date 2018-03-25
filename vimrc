@@ -228,7 +228,7 @@ autocmd BufNewFile,BufRead *.cpp,*.hpp set shiftwidth=2 softtabstop=2
 
 " set full screen toggle for windows
 map <F3> <Esc>:NERDTree<CR>B
-let NERDTreeIgnore = ['\.pyc$', '\.png$', '\.p$', '\.dll$', '\.aux$', '\.log$', '\.blg$', '\.fls$', '\.spl$', '\.fdb_latexmk$', '\.synctex$', '\.synctex.gz$', '\.out$', '\.bbl$', ]
+let NERDTreeIgnore = ['\.pyc$', '\.png$', '\.p$', '\.dll$', '\.aux$', '\.log$', '\.fls$', '\.spl$', '\.fdb_latexmk$', '\.synctex$', '\.synctex.gz$', '\.out$', '\.pdf$', '\.ini$' ]
 let NERDTreeQuitOnOpen=1
 
 " spell check on .txt files
@@ -262,7 +262,7 @@ inoremap <C-S>		<Esc>:update<CR><Esc>
 autocmd BufNewFile,BufRead *.tex let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', "`":"'", '$':'$'}
 " this is mostly a matter of taste. but LaTeX looks good with just a bit
 " of indentation.
-autocmd BufNewFile,BufRead *.tex set shiftwidth=2 softtabstop=2
+autocmd BufNewFile,BufRead *.tex,*.m set shiftwidth=2 softtabstop=2
 " TIP: if you write your \label's as \label{fig:something}, then if you
 " type in \ref{fig: and press <C-n> you will automatically cycle through
 " all the figure labels. Very useful!
@@ -283,7 +283,8 @@ let g:vimtex_quickfix_latexlog = {
 :helptags C:\Program\Vim\vimfiles\bundle\vimcompletesme\doc\
 :helptags C:\Program\Vim\vimfiles\bundle\nerdcommenter\doc\
 :helptags C:\Program\Vim\vimfiles\bundle\nerdtree\doc\
-:helptags C:\Program\Vim\vimfiles\bundle\vim-yankstack\\doc\
+:helptags C:\Program\Vim\vimfiles\bundle\vim-yankstack\doc\
+:helptags C:\Program\Vim\vimfiles\bundle\ultisnips\doc\
 
 " for vimcompletsme
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"

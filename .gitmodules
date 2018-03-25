@@ -21,3 +21,7 @@
 [submodule "vimfiles/bundle/nerdcommenter"]
     path = vimfiles/bundle/nerdcommenter
     url = https://github.com/scrooloose/nerdcommenter.git
+
+[submodule "ultisnips"]
+    path = vimfiles/bundle/ultisnips
+    url = https://github.com/SirVer/ultisnips.git
