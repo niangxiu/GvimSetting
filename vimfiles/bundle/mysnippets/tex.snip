@@ -1,31 +1,133 @@
 # equations
 snippet eq
-    \begin{equation}
-        ${1:TARGET}
-    \end{equation}
+  \begin{equation}
+    ${1:TARGET}
+  \end{equation}
 
-# unlabeled equation
+# unnumbered equation
 snippet equ
-    \begin{equation*}
-        ${1:TARGET}
-    \end{equation*}
+  \begin{equation*}
+    ${1:TARGET}
+  \end{equation*}
 
-# equation unlabeled with split
+# equation unnumbered with split
 snippet equs
 alias eqsu
-    \begin{equation*} \begin{split}
-        ${1:TARGET}
-    \end{split} \end{equation*}
+  \begin{equation*} \begin{split}
+    ${1:TARGET}
+  \end{split} \end{equation*}
+
+# equation with split
+snippet eqs
+alias eqs
+  \begin{equation} \begin{split}
+    ${1:TARGET}
+  \end{split} \end{equation}
+
 
 # labeled equation
 snippet eql
-    \begin{equation} \label{e:${1:TARGET}}
-        ${2:TARGET}
-    \end{equation}
+  \begin{equation} \label{e:${1:TARGET}}
+    ${2:TARGET}
+  \end{equation}
 
 # labeled equation with split
 snippet eqls
 alias eqsl
-    \begin{equation} \begin{split} \label{e:${1:TARGET}}
-        ${2:TARGET}
-    \end{split} \end{equation}
+  \begin{equation} \begin{split} \label{e:${1:TARGET}}
+    ${2:TARGET}
+  \end{split} \end{equation}
+
+# fraction numbers
+snippet frac
+  \frac{${1:TARGET}}{${2:TARGET}}${3:TARGET}
+
+# figures
+snippet fig
+  \begin{figure} \centering
+    \includegraphics[width=${1:TARGET}\textwidth]{${2:TARGET}}
+    \caption{${3:TARGET}}
+    \label{f:${4:TARGET}}
+  \end{figure}${5:TARGET}
+
+
+# subfigures (by subcaption package)
+snippet subfig
+  \begin{figure}
+    \begin{subfigure}{0.49\textwidth}
+      \includegraphics[trim=0cm 0cm 0cm 0cm, clip=true, width=\textwidth] {figs/dJds_history0_U_D}
+      \caption{Drag versus $U$}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.49\textwidth}
+      \includegraphics[trim=0cm 0cm 0cm 0cm, clip=true, width=\textwidth] {figs/dJds_history2_w_L}
+      \caption{Lift versus $\omega$}
+    \end{subfigure}
+
+    \begin{subfigure}{0.49\textwidth}
+      \includegraphics[trim=0cm 0cm 0cm 0cm, clip=true, width=\textwidth] {figs/dJds_history1_U_Pb}
+      \caption{Base suction versus $U$}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.49\textwidth}
+      \includegraphics[trim=0cm 0cm 0cm 0cm, clip=true, width=\textwidth] {figs/dJds_history3_w_L2}
+      \caption{Lift$^2$ versus $\omega$}
+    \end{subfigure}
+    \caption{History plots of sensitivities computed by NILSS.}
+    \label{f:djds history}
+  \end{figure}
+
+
+# tables
+snippet tab
+alias tabular, table
+  \begin{table}[h!${1:TARGET}] \centering
+    \begin{tabular}{c c c${2:TARGET}} 
+      \hline
+      Col1 & Col2 & Col2 ${3:TARGET} \\
+      \hline
+    \end{tabular}
+    \caption{${4:TARGET}}
+    \label{${5:TARGET}}
+  \end{table}${6:TARGET}
+
+
+# skeleton of the entire paper
+snippet documentclass
+  \usepackage{epstopdf, epsfig}
+  \usepackage{amsmath}
+  \usepackage{natbib}
+  \usepackage{amsbsy,amsfonts,amsgen,amssymb}
+  \usepackage{hyperref}
+  \usepackage{textcomp}
+  \usepackage{gensymb}
+  \usepackage{subcaption}
+  \usepackage{enumitem}
+
+  \newcommand{\dd}[2]{\frac{d #1}{d #2}}
+  \newcommand{\pp}[2]{\frac{\partial #1}{\partial #2}}
+  \newcommand{\avg}[1]{\left\langle #1 \right\rangle}
+  \newcommand{\R}{\mathbb{R}}
+  \newcommand{\mat}[1]{\begin{bmatrix}#1\end{bmatrix}}
+  \newcommand{\mus}{{m_{us}}}
+  \newcommand{\argmin}{\text{arg\,min}}
+
+  \begin{document}
+
+  \title{}
+  \author{Angxiu Ni}
+  \affiliation{Department of Mathematics, University of California, Berkeley, Berkeley, CA 94720, USA}
+
+  \begin{abstract}
+  \end{abstract}
+
+  \maketitle
+
+  \section{Introduction}
+
+  \section*{References}
+  \bibliography{MyCollection}
+
+
+snippet ep
+  \epsilon

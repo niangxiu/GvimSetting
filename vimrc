@@ -188,11 +188,6 @@ if &diff                             " only for diff mode/vimdiff
 endif
 
 " motion key in insert mode
-"inoremap <A-h> <C-o>h
-"inoremap <A-j> <C-o>j
-"inoremap <A-k> <C-o>k
-"inoremap <A-l> <C-o>l
-"inoremap <A-x> <C-o>x
 inoremap <C-a> <Esc>A
 nnoremap <C-a> A
 
@@ -215,9 +210,11 @@ map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0) <CR>
 " set autopairs of <> when opening a .html file
 autocmd BufNewFile,BufRead *.html let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`', '<':'>'}
 
-" set indent when opening a .cpp .hpp file
+" set indent when opening certain files
 " 1 tab == 2 spaces
-autocmd BufNewFile,BufRead *.cpp,*.hpp set shiftwidth=2 softtabstop=2
+autocmd BufNewFile,BufRead *.cpp,*.hpp,*.tex,*.m,tex.snip,m.snip,plaintex.snip set shiftwidth=2 softtabstop=2
+" 1 tab == 4 spaces
+autocmd BufNewFile,BufRead *.py,python.snip set shiftwidth=4 softtabstop=4
 
 " no .un~ files
 :set noundofile
@@ -228,7 +225,7 @@ autocmd BufNewFile,BufRead *.cpp,*.hpp set shiftwidth=2 softtabstop=2
 
 " set full screen toggle for windows
 map <F3> <Esc>:NERDTree<CR>B
-let NERDTreeIgnore = ['\.pyc$', '\.png$', '\.p$', '\.dll$', '\.aux$', '\.log$', '\.fls$', '\.spl$', '\.fdb_latexmk$', '\.synctex$', '\.synctex.gz$', '\.out$', '\.pdf$', '\.ini$' ]
+let NERDTreeIgnore = ['\.pyc$', '\.png$', '\.p$', '\.dll$', '\.aux$', '\.log$', '\.fls$', '\.spl$', '\.fdb_latexmk$', '\.synctex$', '\.synctex.gz$', '\.out$', '\.pdf$', '\.ini$', '\.zip', '\.bst' ]
 let NERDTreeQuitOnOpen=1
 
 " spell check on .txt files
@@ -260,9 +257,6 @@ inoremap <C-S>		<Esc>:update<CR><Esc>
 " configurations for latex:
 " set autopairs of $$ when opening a .tex file
 autocmd BufNewFile,BufRead *.tex let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', "`":"'", '$':'$'}
-" this is mostly a matter of taste. but LaTeX looks good with just a bit
-" of indentation.
-autocmd BufNewFile,BufRead *.tex,*.m set shiftwidth=2 softtabstop=2
 " TIP: if you write your \label's as \label{fig:something}, then if you
 " type in \ref{fig: and press <C-n> you will automatically cycle through
 " all the figure labels. Very useful!
@@ -271,8 +265,9 @@ autocmd BufNewFile,BufRead *.tex set iskeyword+=:
 " configuration for vimtex
 let g:vimtex_view_general_viewer = 'SumatraPDF'
 let g:vimtex_view_general_options
-    \ = '-reuse-instance -forward-search @tex @line @pdf'
+    \ = '-invert-colors -forward-search @tex @line @pdf'
 let g:vimtex_view_general_options_latexmk = '-reuse-instance'
+"let g:vimtex_quickfix_latexlog = {'default' : 0}
 let g:vimtex_quickfix_latexlog = {
           \ 'overfull' : 0,
           \ 'underfull' : 0,
@@ -302,3 +297,7 @@ smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
 let g:neosnippet#snippets_directory = "$VIM/vimfiles/bundle/mysnippets"
 
+
+"switch to the next or previous buffer in the buffer list, A list of your buffers can be shown after switching
+:nnoremap <C-n> :bnext<CR>:redraw<CR>:ls<CR>
+:nnoremap <C-p> :bprevious<CR>:redraw<CR>:ls<CR>

@@ -1,0 +1,85 @@
+snippet pl
+alias pickleload
+    try:
+        ${1:TARGET}, ${2:TARGET}  = pickle.load( open("${3:TARGET}.p", "rb"))
+    except FileNotFoundError:
+        ${4:TARGET}
+
+
+snippet ps
+alias pd, pickledump, picklesave
+    pickle.dump((${1:TARGET}, ${2:TARGET}), \
+        open("${3:TARGET}.p", "wb"))
+
+
+snippet rc
+    plt.rc('axes', labelsize='xx-large',  labelpad=12)
+    plt.rc('xtick', labelsize='xx-large')
+    plt.rc('ytick', labelsize='xx-large')
+    plt.rc('legend', fontsize='xx-large')
+    plt.rc('font', family='sans-serif')
+  
+
+snippet plot
+    plt.plot(${1:TARGET}, ${2:TARGET}, 'k.')
+    plt.xlabel('${3:TARGET}')
+    plt.ylabel('${4:TARGET}')
+    #grid()
+    #plt.xlim([])
+    #plt.ylim([])
+    #ticklabel_format(style='sci', axis='y', scilimits=(3,3))
+    plt.tight_layout()
+    plt.savefig('${5:TARGET}.png')
+    plt.close()${6:TARGET}
+   
+
+snippet open
+    with open("${1:TARGET}") as ${2:TARGET}:
+        ${3:TARGET}
+
+
+snippet import
+    import numpy as np
+    import matplotlib
+    matplotlib.use('Agg')
+    import matplotlib.pyplot as plt
+
+    import sys
+    sys.path.append('${1:TARGET}')
+    from nilsas.utility import qr_transpose, remove_orth_projection ${2:TARGET}
+
+
+snippet class
+    class ${1:TARGET}:
+
+        def __init__(self):
+            self.${2:TARGET}= ${3:TARGET}
+
+        def my_function(self, my_args):
+            ${4:TARGET}
+
+
+snippet function
+alias func
+    def my_func${1:TARGET}(my_args${2:TARGET}):
+        """
+        Args: 
+            ${3:TARGET}
+        Returns:
+            ${4:TARGET}
+        """
+        ${5:TARGET}
+        return ${6:TARGET}
+  
+
+snippet trace
+    import pdb; 
+    pdb.set_trace()
+
+
+snippet pandas
+    from __future__ import division
+    from numpy import *
+    from pandas import *
+    source =  read_excel('${1:TARGET}')
+    nsource = source['${2:TARGET}'].shape[0]
