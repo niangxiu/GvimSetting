@@ -275,12 +275,12 @@ let g:vimtex_quickfix_latexlog = {
 
 " help doc for the windows systems and linux
 if has("win16") || has("win32") || has("win64")
-    :helptags C:\Program\Vim\vimfiles\bundle\vimtex\doc\
-    :helptags C:\Program\Vim\vimfiles\bundle\vimcompletesme\doc\
-    :helptags C:\Program\Vim\vimfiles\bundle\nerdcommenter\doc\
-    :helptags C:\Program\Vim\vimfiles\bundle\nerdtree\doc\
-    :helptags C:\Program\Vim\vimfiles\bundle\vim-yankstack\doc\
-    :helptags C:\Program\Vim\vimfiles\bundle\neosnippet\doc
+    :helptags C:\Programs\Vim\vimfiles\bundle\vimtex\doc\
+    :helptags C:\Programs\Vim\vimfiles\bundle\vimcompletesme\doc\
+    :helptags C:\Programs\Vim\vimfiles\bundle\nerdcommenter\doc\
+    :helptags C:\Programs\Vim\vimfiles\bundle\nerdtree\doc\
+    :helptags C:\Programs\Vim\vimfiles\bundle\vim-yankstack\doc\
+    :helptags C:\Programs\Vim\vimfiles\bundle\neosnippet\doc
 else
     :helptags /usr/share/vim/vimfiles/bundle/vimtex/doc
     :helptags /usr/share/vim/vimfiles/bundle/vimcompletesme/doc
