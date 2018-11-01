@@ -282,11 +282,11 @@ if has("win16") || has("win32") || has("win64")
     :helptags C:\Program\Vim\vimfiles\bundle\vim-yankstack\doc\
     :helptags C:\Program\Vim\vimfiles\bundle\neosnippet\doc
 else
-    :helptags /usr/share/vim/vimfiles/bundle/vimtex/doc/
-    :helptags /usr/share/vim/vimfiles/bundle/vimcompletesme/doc/
-    :helptags /usr/share/vim/vimfiles/bundle/nerdcommenter/doc/
-    :helptags /usr/share/vim/vimfiles/bundle/nerdtree/doc/
-    :helptags /usr/share/vim/vimfiles/bundle/vim-yankstack/doc/
+    :helptags /usr/share/vim/vimfiles/bundle/vimtex/doc
+    :helptags /usr/share/vim/vimfiles/bundle/vimcompletesme/doc
+    :helptags /usr/share/vim/vimfiles/bundle/nerdcommenter/doc
+    :helptags /usr/share/vim/vimfiles/bundle/nerdtree/doc
+    :helptags /usr/share/vim/vimfiles/bundle/vim-yankstack/doc
     :helptags /usr/share/vim/vimfiles/bundle/neosnippet/doc
 endif
 
