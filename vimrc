@@ -33,7 +33,7 @@ set wildmenu
 
 " Ignore compiled files
 set wildignore=*.o,*~,*.pyc
-if has("win16") || has("win32")
+if has("win16") || has("win32") || has("win64")
     set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
 else
     set wildignore+=.git\*,.hg\*,.svn\*
@@ -273,13 +273,23 @@ let g:vimtex_quickfix_latexlog = {
           \ 'underfull' : 0,
           \}
 
-" help doc
-:helptags C:\Program\Vim\vimfiles\bundle\vimtex\doc\
-:helptags C:\Program\Vim\vimfiles\bundle\vimcompletesme\doc\
-:helptags C:\Program\Vim\vimfiles\bundle\nerdcommenter\doc\
-:helptags C:\Program\Vim\vimfiles\bundle\nerdtree\doc\
-:helptags C:\Program\Vim\vimfiles\bundle\vim-yankstack\doc\
-:helptags C:\Program\Vim\vimfiles\bundle\neosnippet\doc
+" help doc for the windows systems and linux
+if has("win16") || has("win32") || has("win64")
+    :helptags C:\Program\Vim\vimfiles\bundle\vimtex\doc\
+    :helptags C:\Program\Vim\vimfiles\bundle\vimcompletesme\doc\
+    :helptags C:\Program\Vim\vimfiles\bundle\nerdcommenter\doc\
+    :helptags C:\Program\Vim\vimfiles\bundle\nerdtree\doc\
+    :helptags C:\Program\Vim\vimfiles\bundle\vim-yankstack\doc\
+    :helptags C:\Program\Vim\vimfiles\bundle\neosnippet\doc
+else
+    :helptags /usr/share/vim/vimfiles/bundle/vimtex/doc/
+    :helptags /usr/share/vim/vimfiles/bundle/vimcompletesme/doc/
+    :helptags /usr/share/vim/vimfiles/bundle/nerdcommenter/doc/
+    :helptags /usr/share/vim/vimfiles/bundle/nerdtree/doc/
+    :helptags /usr/share/vim/vimfiles/bundle/vim-yankstack/doc/
+    :helptags /usr/share/vim/vimfiles/bundle/neosnippet/doc
+endif
+
 
 " for vimcompletsme
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
