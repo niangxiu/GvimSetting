@@ -265,7 +265,7 @@ autocmd BufNewFile,BufRead *.tex set iskeyword+=:
 " configuration for vimtex
 let g:vimtex_view_general_viewer = 'SumatraPDF'
 let g:vimtex_view_general_options
-    \ = '-invert-colors -forward-search @tex @line @pdf'
+    \ = '-forward-search @tex @line @pdf'
 let g:vimtex_view_general_options_latexmk = '-reuse-instance'
 "let g:vimtex_quickfix_latexlog = {'default' : 0}
 let g:vimtex_quickfix_latexlog = {
