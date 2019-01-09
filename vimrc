@@ -269,9 +269,13 @@ let g:vimtex_view_general_options
 let g:vimtex_view_general_options_latexmk = '-reuse-instance'
 "let g:vimtex_quickfix_latexlog = {'default' : 0}
 let g:vimtex_quickfix_latexlog = {
-          \ 'overfull' : 0,
-          \ 'underfull' : 0,
-          \}
+            \ 'overfull' : 0,
+            \ 'underfull' : 0,
+            \ 'packages' : {
+            \   'default' : 1,
+            \   'titlesec' : 0,
+            \ },
+            \}
 
 " help doc for the windows systems and linux
 if has("win16") || has("win32") || has("win64")
