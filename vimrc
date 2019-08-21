@@ -311,3 +311,9 @@ let g:neosnippet#snippets_directory = "$VIM/vimfiles/bundle/mysnippets"
 "switch to the next or previous buffer in the buffer list, A list of your buffers can be shown after switching
 :nnoremap <C-n> :bnext<CR>:redraw<CR>:ls<CR>
 :nnoremap <C-p> :bprevious<CR>:redraw<CR>:ls<CR>
+
+
+" for ctags and taglist
+let Tlist_Ctags_Cmd = 'C:\Programs\Vim\vimfiles\bundle\ctags58\ctags.exe'
+nnoremap <silent> <F4> :TlistOpen<CR>
+let Tlist_Close_On_Select = 1
