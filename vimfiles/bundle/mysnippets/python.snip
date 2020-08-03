@@ -1,3 +1,7 @@
+snippet format
+    'trajectory_A{}_K{}.png'.format(int(ifac),int(nseg))
+
+
 snippet pl
 alias pickleload
     try:
@@ -44,6 +48,13 @@ snippet import
     matplotlib.use('Agg')
     import matplotlib.pyplot as plt
 
+    plt.rc('axes', labelsize='xx-large',  labelpad=12)
+    plt.rc('xtick', labelsize='xx-large')
+    plt.rc('ytick', labelsize='xx-large')
+    plt.rc('legend', fontsize='xx-large')
+    plt.rc('font', family='sans-serif')
+    plt.rc('axes', titlesize='xx-large')
+
     import sys
     sys.path.append('${1:TARGET}')
     from nilsas.utility import qr_transpose, remove_orth_projection ${2:TARGET}
@@ -83,3 +94,20 @@ snippet pandas
     from pandas import *
     source =  read_excel('${1:TARGET}')
     nsource = source['${2:TARGET}'].shape[0]
+
+
+snippet fig
+    fig = plt.figure(figsize=(10,8))
+    plt.semilogx(T_, Javg_, 'k.')
+    plt.xlabel('$T$')
+    plt.ylabel('$J_{avg}$')
+    plt.tight_layout()
+    plt.savefig('T_J.png')
+    plt.close()
+
+
+snippet subfig
+     f, (ax1, ax2) = plt.subplots(1, 2, figsize=(12,5), sharey=True)
+     ax1.scatter(u[:100,:,2].T, u[:100,:,1].T, c=u[:100,:,0].T, cmap='gray', s=0.01, label='z')
+     ax2.scatter(u[-100:,:,2].T, u[-100:,:,1].T, c=u[-100:,:,0].T, cmap='gray', s=0.01, label='z')
+    

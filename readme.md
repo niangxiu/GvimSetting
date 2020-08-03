@@ -8,7 +8,9 @@ git submodule update --recursive
 if have trouble update submodules, use:
 git rm --cached modulename
 
-to add a new submodule, change .gitmodule file
+to add a new submodule, use:
+git add <repo> <name>
+then check .gitmodule file
 
 for the vimtex to run,
 first install latexmk from miktex

@@ -256,7 +256,7 @@ inoremap <C-S>		<Esc>:update<CR><Esc>
 
 " configurations for latex:
 " set autopairs of $$ when opening a .tex file
-autocmd BufNewFile,BufRead *.tex let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', "`":"'", '$':'$'}
+autocmd BufNewFile,BufRead *.tex let g:AutoPairs = {'(':')', '[':']', '{':'}','``':'"', "`":"'", '$':'$'}
 " TIP: if you write your \label's as \label{fig:something}, then if you
 " type in \ref{fig: and press <C-n> you will automatically cycle through
 " all the figure labels. Very useful!
@@ -276,6 +276,10 @@ let g:vimtex_quickfix_latexlog = {
             \   'titlesec' : 0,
             \ },
             \}
+let g:vimtex_quickfix_mode = 0
+"let g:vimtex_quickfix_autoclose_after_keystrokes = 2
+"let g:vimtex_view_enabled = 0
+let g:vimtex_view_automatic = 0
 
 " help doc for the windows systems and linux
 if has("win16") || has("win32") || has("win64")
@@ -310,6 +314,7 @@ imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
 let g:neosnippet#snippets_directory = "$VIM/vimfiles/bundle/mysnippets"
+let g:neosnippet#enable_auto_clear_markers = 0
 
 
 "switch to the next or previous buffer in the buffer list, A list of your buffers can be shown after switching
@@ -321,3 +326,15 @@ let g:neosnippet#snippets_directory = "$VIM/vimfiles/bundle/mysnippets"
 let Tlist_Ctags_Cmd = 'C:\Programs\Vim\vimfiles\bundle\ctags58\ctags.exe'
 nnoremap <silent> <F4> :TlistOpen<CR>
 let Tlist_Close_On_Select = 1
+
+
+" auto save on
+let g:auto_save = 1  " enable AutoSave on Vim startup, but this conflict with neosnippet
+let g:auto_save_no_updatetime = 1  " do not change the 'updatetime' option
+"let g:auto_save_silent = 1  " do not display the auto-save notification
+
+
+" Edit vimr configuration file
+nnoremap <Leader>ve :e $VIM/vimrc<CR>
+" Reload vimr configuration file
+nnoremap <Leader>vv :source $VIM/vimrc<CR>

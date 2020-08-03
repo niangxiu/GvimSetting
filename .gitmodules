@@ -1,31 +1,35 @@
 [submodule "nerdtree"]
-        path = "vimfiles/bundle/nerdtree"
-        url = https://github.com/scrooloose/nerdtree.git
+    path = "vimfiles/bundle/nerdtree"
+    url = https://github.com/scrooloose/nerdtree.git
 
 [submodule "vim-yankstack"]
-        path = "vimfiles/bundle/vim-yankstack"
-        url = https://github.com/maxbrunsfeld/vim-yankstack.git 
+    path = "vimfiles/bundle/vim-yankstack"
+    url = https://github.com/maxbrunsfeld/vim-yankstack.git 
 
 [submodule "vimtex"]
-        path = vimfiles/bundle/vimtex
-        url = https://github.com/lervag/vimtex.git
+    path = "vimfiles/bundle/vimtex"
+    url = https://github.com/lervag/vimtex.git
 
 [submodule "vimfiles/bundle/vimcompletesme"]
-        path = vimfiles/bundle/vimcompletesme
-        url = https://github.com/ajh17/VimCompletesMe.git
+    path = "vimfiles/bundle/vimcompletesme"
+    url = https://github.com/ajh17/VimCompletesMe.git
 
 [submodule "vimfiles/bundle/autopairs"]
-        path = vimfiles/bundle/autopairs
-        url = https://github.com/jiangmiao/auto-pairs.git
+    path = "vimfiles/bundle/autopairs"
+    url = https://github.com/jiangmiao/auto-pairs.git
 
 [submodule "vimfiles/bundle/nerdcommenter"]
-        path = vimfiles/bundle/nerdcommenter
-        url = https://github.com/scrooloose/nerdcommenter.git
+    path = "vimfiles/bundle/nerdcommenter"
+    url = https://github.com/scrooloose/nerdcommenter.git
 
 [submodule "vimfiles/bundle/neosnippet"]
-        path = vimfiles/bundle/neosnippet
-        url = https://github.com/Shougo/neosnippet.vim.git
+    path = "vimfiles/bundle/neosnippet"
+    url = https://github.com/Shougo/neosnippet.vim.git
 
 [submodule "vimfiles/bundle/neosnippet-snippets"]
-        path = vimfiles/bundle/neosnippet-snippets
-        url = https://github.com/Shougo/neosnippet-snippets.git
+    path = "vimfiles/bundle/neosnippet-snippets"
+    url = https://github.com/Shougo/neosnippet-snippets.git
+
+[submodule "vimfiles/bundle/vim-auto-save"]
+    path = vimfiles/bundle/vim-auto-save
+    url = https://github.com/907th/vim-auto-save.git
