@@ -6,16 +6,16 @@ snippet eq
 
 # unnumbered equation
 snippet equ
-  \begin{equation*}
+  \[
     ${1:TARGET}
-  \end{equation*}
+  \]
 
 # equation unnumbered with split
 snippet equs
 alias eqsu
-  \begin{equation*} \begin{split}
+  \[ \begin{split}
     ${1:TARGET}
-  \end{split} \end{equation*}
+  \end{split} \]
 
 # equation with split
 snippet eqs
@@ -34,25 +34,31 @@ snippet eql
 # labeled equation with split
 snippet eqls
 alias eqsl
-  \begin{equation} \begin{split} \label{e:${1:TARGET}}
-    ${2:TARGET}
+  \begin{equation} \begin{split} \label{e:${1}}
+    ${2}
   \end{split} \end{equation}
 
 snippet lem
 alias lemma
-  \begin{lemma} [${1}] \label{e:${2}}
+  \begin{lemma} [${1}] \label{l:${2}}
     ${3}
   \end{lemma}
 
+snippet prop
+alias proposition 
+  \begin{proposition} [${1}] \label{l:${2}}
+    ${3}
+  \end{proposition}
+
 snippet thm
 alias theorem
-  \begin{theorem} [${1}] \label{e:${2}}
+  \begin{theorem} [${1}] \label{t:${2}}
     ${3}
-  \end{theorem}${4}
+  \end{theorem}
 
 snippet df
 alias dfn, definition
-  \begin{definition} \label{e:${1}}
+  \begin{definition} \label{d:${1}}
     ${2}
   \end{definition}
   
@@ -68,10 +74,12 @@ alias remark
     ${1}
   \end{remark*} 
 
+snippet lr
+  \left ${1} \right
 
 # fraction numbers
 snippet frac
-  \frac{${1:TARGET}}{${2:TARGET}}${3:TARGET}
+  \frac{${1:TARGET}}{${2:TARGET}}
 
 # figures
 snippet fig

@@ -11,10 +11,10 @@ set history=500
 " Enable filetype plugins
 filetype plugin on
 filetype indent on
+"set ai "Auto indent
 
 " Set to auto read when a file is changed from the outside
 set autoread
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -122,9 +122,11 @@ set expandtab
 " Be smart when using tabs ;)
 set smarttab
 
+" set indent when opening certain files
+" 1 tab == 2 spaces
+autocmd BufNewFile,BufRead *.cpp,*.hpp,*.tex,*.m,tex.snip,m.snip,plaintex.snip set shiftwidth=2 softtabstop=2 tabstop=2
 " 1 tab == 4 spaces
-set shiftwidth=4
-set softtabstop=4
+autocmd BufNewFile,BufRead *.py,python.snip,*.html set shiftwidth=4 softtabstop=4 tabstop=4
 
 " Linebreak on 500 characters
 set wrap "Wrap lines
@@ -132,8 +134,8 @@ set linebreak
 set nolist
 set textwidth=0
 set wrapmargin=0
+set showbreak=>\ \ \
 
-set ai "Auto indent
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Moving around, tabs, windows and buffers
@@ -166,7 +168,7 @@ set number
 if has("gui_running")
     " GUI is running or is about to start.
     " Maximize gvim window (for an alternative on Windows, see simalt below).
-    set lines=999 columns=999
+    set lines=999 columns=103
     set guioptions-=m
     set guioptions-=T
     set guioptions-=r
@@ -190,6 +192,8 @@ endif
 " motion key in insert mode
 inoremap <C-a> <Esc>A
 nnoremap <C-a> A
+xnoremap <C-a> <Esc>A
+vnoremap <C-a> <Esc>A
 
 " set uniform clipboard
 if has("unix")
@@ -209,12 +213,6 @@ map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0) <CR>
 
 " set autopairs of <> when opening a .html file
 autocmd BufNewFile,BufRead *.html let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`', '<':'>'}
-
-" set indent when opening certain files
-" 1 tab == 2 spaces
-autocmd BufNewFile,BufRead *.cpp,*.hpp,*.tex,*.m,tex.snip,m.snip,plaintex.snip set shiftwidth=2 softtabstop=2
-" 1 tab == 4 spaces
-autocmd BufNewFile,BufRead *.py,python.snip set shiftwidth=4 softtabstop=4
 
 " no .un~ files
 :set noundofile
@@ -280,6 +278,8 @@ let g:vimtex_quickfix_mode = 0
 "let g:vimtex_quickfix_autoclose_after_keystrokes = 2
 "let g:vimtex_view_enabled = 0
 let g:vimtex_view_automatic = 0
+let g:vimtex_indent_on_ampersands = 0
+
 
 " help doc for the windows systems and linux
 if has("win16") || has("win32") || has("win64")
@@ -332,9 +332,34 @@ let Tlist_Close_On_Select = 1
 let g:auto_save = 1  " enable AutoSave on Vim startup, but this conflict with neosnippet
 let g:auto_save_no_updatetime = 1  " do not change the 'updatetime' option
 "let g:auto_save_silent = 1  " do not display the auto-save notification
-
+"let g:auto_save_events = ["InsertLeave", "TextChanged", "TextChangedI", "CursorHold", "CursorHoldI", "CompleteDone"]
+let g:auto_save_events = ["InsertLeave", "TextChanged"]
 
 " Edit vimr configuration file
 nnoremap <Leader>ve :e $VIM/vimrc<CR>
 " Reload vimr configuration file
 nnoremap <Leader>vv :source $VIM/vimrc<CR>
+
+
+imap <C-L> <Esc>
+xmap <C-L> <Esc>
+nmap <C-L> <Esc>
+omap <C-L> <Esc>
+
+autocmd FileType tex imap kk $
+imap kj <Del>
+autocmd FileType tex imap kl ~
+
+nmap e 4w
+vmap e 4w
+nmap q 4b
+vmap q 4b
+autocmd FileType tex set indentkeys=
+
+noremap % v%
+
+vmap y ygv<Esc>
+xmap y ygv<Esc>
+
+:nnoremap j gj
+:nnoremap k gk
