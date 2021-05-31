@@ -70,12 +70,21 @@ alias proof
 
 snippet rmk
 alias remark
-  \begin{remark*}
-    ${1}
+  \begin{remark*}[${1}]
+    ${2}
   \end{remark*} 
+
+snippet def
+alias definition
+  \begin{definition*}[${1}]
+    ${2}
+  \end{definition*} 
 
 snippet lr
   \left ${1} \right
+
+snippet set
+  \{ ${1} \}_{ ${2} }^
 
 # fraction numbers
 snippet frac

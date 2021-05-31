@@ -190,10 +190,10 @@ if &diff                             " only for diff mode/vimdiff
 endif
 
 " motion key in insert mode
-inoremap <C-a> <Esc>A
-nnoremap <C-a> A
-xnoremap <C-a> <Esc>A
-vnoremap <C-a> <Esc>A
+inoremap <C-a> <Esc>g$i
+nnoremap <C-a> g$ha
+xnoremap <C-a> <Esc>g$i
+vnoremap <C-a> <Esc>g$i
 
 " set uniform clipboard
 if has("unix")
@@ -254,7 +254,7 @@ inoremap <C-S>		<Esc>:update<CR><Esc>
 
 " configurations for latex:
 " set autopairs of $$ when opening a .tex file
-autocmd BufNewFile,BufRead *.tex let g:AutoPairs = {'(':')', '[':']', '{':'}','``':'"', "`":"'", '$':'$'}
+autocmd BufNewFile,BufRead *.tex let g:AutoPairs = {'(':')', '[':']', '{':'}',"``":"''", "`":"'", '$':'$'}
 " TIP: if you write your \label's as \label{fig:something}, then if you
 " type in \ref{fig: and press <C-n> you will automatically cycle through
 " all the figure labels. Very useful!
@@ -265,20 +265,19 @@ let g:vimtex_view_general_viewer = 'SumatraPDF'
 let g:vimtex_view_general_options
     \ = '-forward-search @tex @line @pdf'
 let g:vimtex_view_general_options_latexmk = '-reuse-instance'
-"let g:vimtex_quickfix_latexlog = {'default' : 0}
-let g:vimtex_quickfix_latexlog = {
-            \ 'overfull' : 0,
-            \ 'underfull' : 0,
-            \ 'packages' : {
-            \   'default' : 1,
-            \   'titlesec' : 0,
-            \ },
-            \}
-let g:vimtex_quickfix_mode = 0
-"let g:vimtex_quickfix_autoclose_after_keystrokes = 2
+let g:vimtex_quickfix_ignore_filters = [
+      \ 'Marginpar on page',
+      \ 'Overfull', 'Underfull',
+      \]
+let g:vimtex_quickfix_mode = 2
+let g:vimtex_quickfix_autoclose_after_keystrokes = 2
 "let g:vimtex_view_enabled = 0
-let g:vimtex_view_automatic = 0
+let g:vimtex_view_automatic = 1
 let g:vimtex_indent_on_ampersands = 0
+let g:vimtex_toc_config = {
+      \ 'hide_line_numbers' : 1, 
+      \ 'layer_status' : { 'content': 1, 'label': 0, 'todo': 1, 'include': 1},
+      \ }
 
 
 " help doc for the windows systems and linux
@@ -305,7 +304,10 @@ augroup VimCompletesMeTex
     autocmd!
     autocmd FileType tex
         \ let b:vcm_omni_pattern = g:vimtex#re#neocomplete
+        "\ setlocal complete-=id
 augroup END
+
+set complete-=i
 
 
 " Plugin key-mappings.
@@ -363,3 +365,9 @@ xmap y ygv<Esc>
 
 :nnoremap j gj
 :nnoremap k gk
+:nnoremap <Down> gj
+:nnoremap <Up> gk
+:inoremap <Down> <Esc>gj
+:inoremap <Up> <Esc>gk
+noremap <silent> 0 g0
+noremap <silent> $ g$
