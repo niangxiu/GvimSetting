@@ -190,10 +190,10 @@ if &diff                             " only for diff mode/vimdiff
 endif
 
 " motion key in insert mode
-inoremap <C-a> <Esc>g$i
-nnoremap <C-a> g$ha
-xnoremap <C-a> <Esc>g$i
-vnoremap <C-a> <Esc>g$i
+inoremap <C-a> <Esc>g$a
+nnoremap <C-a> g$a
+xnoremap <C-a> <Esc>g$a
+vnoremap <C-a> <Esc>g$a
 
 " set uniform clipboard
 if has("unix")
