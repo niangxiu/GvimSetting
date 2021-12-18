@@ -168,12 +168,12 @@ set number
 if has("gui_running")
     " GUI is running or is about to start.
     " Maximize gvim window (for an alternative on Windows, see simalt below).
-    set lines=999 columns=103
+    set lines=999 columns=999
     set guioptions-=m
     set guioptions-=T
     set guioptions-=r
     set guioptions-=L
-    set guifont=consolas:h12
+    set guifont=consolas:h13
 endif
 
 " set short message
@@ -269,7 +269,7 @@ let g:vimtex_quickfix_ignore_filters = [
       \ 'Marginpar on page',
       \ 'Overfull', 'Underfull',
       \]
-let g:vimtex_quickfix_mode = 2
+let g:vimtex_quickfix_mode = 1
 let g:vimtex_quickfix_autoclose_after_keystrokes = 2
 "let g:vimtex_view_enabled = 0
 let g:vimtex_view_automatic = 1
@@ -320,8 +320,8 @@ let g:neosnippet#enable_auto_clear_markers = 0
 
 
 "switch to the next or previous buffer in the buffer list, A list of your buffers can be shown after switching
-:nnoremap <C-n> :bnext<CR>:redraw<CR>:ls<CR>
-:nnoremap <C-p> :bprevious<CR>:redraw<CR>:ls<CR>
+nnoremap <C-n> :bnext<CR>:redraw<CR>:ls<CR>
+nnoremap <C-p> :bprevious<CR>:redraw<CR>:ls<CR>
 
 
 " for ctags and taglist
@@ -360,14 +360,17 @@ autocmd FileType tex set indentkeys=
 
 noremap % v%
 
-vmap y ygv<Esc>
-xmap y ygv<Esc>
+vnoremap y ygv<Esc>
+xnoremap y ygv<Esc>
+nnoremap p gp
 
-:nnoremap j gj
-:nnoremap k gk
-:nnoremap <Down> gj
-:nnoremap <Up> gk
-:inoremap <Down> <Esc>gj
-:inoremap <Up> <Esc>gk
-noremap <silent> 0 g0
-noremap <silent> $ g$
+nnoremap j gj
+nnoremap k gk
+
+":nnoremap <Down> gj
+":nnoremap <Up> gk
+":inoremap <Down> <Esc>gj
+":inoremap <Up> <Esc>gk
+"noremap <silent> 0 g0
+"noremap <silent> $ g$
+

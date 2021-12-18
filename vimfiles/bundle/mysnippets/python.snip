@@ -44,10 +44,18 @@ snippet open
 
 snippet import
     from __future__ import division
+    import shutil
+    import sys
+    import os
+    import time
+    import pickle
+    import itertools
     import numpy as np
     import matplotlib
     matplotlib.use('Agg')
     import matplotlib.pyplot as plt
+    from multiprocessing import Pool, current_process
+    from pdb import set_trace
 
     plt.rc('axes', labelsize='xx-large',  labelpad=12)
     plt.rc('xtick', labelsize='xx-large')
@@ -55,10 +63,6 @@ snippet import
     plt.rc('legend', fontsize='xx-large')
     plt.rc('font', family='sans-serif')
     plt.rc('axes', titlesize='xx-large')
-
-    import sys
-    sys.path.append('${1:TARGET}')
-    from nilsas.utility import qr_transpose, remove_orth_projection ${2:TARGET}
 
 
 snippet class
@@ -111,4 +115,8 @@ snippet subfig
      f, (ax1, ax2) = plt.subplots(1, 2, figsize=(12,5), sharey=True)
      ax1.scatter(u[:100,:,2].T, u[:100,:,1].T, c=u[:100,:,0].T, cmap='gray', s=0.01, label='z')
      ax2.scatter(u[-100:,:,2].T, u[-100:,:,1].T, c=u[-100:,:,0].T, cmap='gray', s=0.01, label='z')
-    
+   
+
+snippet stop
+alias st
+    #TODO: stop

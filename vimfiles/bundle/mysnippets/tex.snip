@@ -4,36 +4,16 @@ snippet eq
     ${1:TARGET}
   \end{equation}
 
-# unnumbered equation
-snippet equ
-  \[
-    ${1:TARGET}
-  \]
-
 # equation unnumbered with split
 snippet equs
-alias eqsu
+alias eqsu, equ
   \[ \begin{split}
     ${1:TARGET}
   \end{split} \]
 
-# equation with split
-snippet eqs
-alias eqs
-  \begin{equation} \begin{split}
-    ${1:TARGET}
-  \end{split} \end{equation}
-
-
-# labeled equation
-snippet eql
-  \begin{equation} \label{e:${1:TARGET}}
-    ${2:TARGET}
-  \end{equation}
-
 # labeled equation with split
 snippet eqls
-alias eqsl
+alias eqsl, eql
   \begin{equation} \begin{split} \label{e:${1}}
     ${2}
   \end{split} \end{equation}
@@ -84,7 +64,7 @@ snippet lr
   \left ${1} \right
 
 snippet set
-  \{ ${1} \}_{ ${2} }^
+  $\{ ${1} \}_{ ${2} }^${3}$
 
 # fraction numbers
 snippet frac
@@ -183,3 +163,26 @@ snippet documentclass
 
 snippet ep
   \epsilon
+
+snippet stop
+  %todo:stop
+
+snippet qq
+  \quad \textnormal{${1:TARGET}} \quad 
+
+snippet subsec
+alias ss
+  \subsection{${1:TARGET}}
+  \hfill\vspace{0.1in}
+
+snippet ()
+  \left(${1:TARGET}\right)
+  
+ 
+snippet case
+alias cases
+  \begin{cases}
+  ${1:TARGET}, \quad\text{if ${2:TARGET}}
+  \\\\
+  ${3:TARGET}, \quad\text{if ${4:TARGET}}
+  \end{cases}
