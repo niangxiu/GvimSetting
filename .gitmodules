@@ -20,7 +20,7 @@
 
 [submodule "vimfiles/bundle/nerdcommenter"]
     path = "vimfiles/bundle/nerdcommenter"
-    url = https://github.com/scrooloose/nerdcommenter.git
+    url = https://github.com/preservim/nerdcommenter.git
 
 [submodule "vimfiles/bundle/neosnippet"]
     path = "vimfiles/bundle/neosnippet"
