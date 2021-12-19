@@ -15,3 +15,6 @@ then check .gitmodule file
 for the vimtex to run,
 first install latexmk from miktex
 then install activePerl
+
+for the windows subsystem linux in Win 11, I need to update submodule under win command line through vpn.
+First connect to vpn. Use "start-ssh-agent" in cmd. Then git.
