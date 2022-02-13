@@ -76,10 +76,8 @@ set showmatch
 set mat=2
 
 " No annoying sound on errors
-set noerrorbells
-set novisualbell
-set t_vb=
-set tm=500
+set noerrorbells visualbell t_vb=
+autocmd GUIEnter * set visualbell t_vb=
 
 " Add a bit extra margin to the left
 "set foldcolumn=1
@@ -168,7 +166,7 @@ set number
 if has("gui_running")
     " GUI is running or is about to start.
     " Maximize gvim window (for an alternative on Windows, see simalt below).
-    set lines=999 columns=999
+    set lines=40 columns=85
     set guioptions-=m
     set guioptions-=T
     set guioptions-=r
@@ -208,7 +206,6 @@ nmap <leader>P <Plug>yankstack_substitute_newer_paste
 let g:yankstack_map_keys = 0
 
 " set full screen toggle for windows
-"map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0) \| :set guioptions-=m<CR>
 map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0) <CR>
 
 " set autopairs of <> when opening a .html file
@@ -331,17 +328,21 @@ let Tlist_Close_On_Select = 1
 
 
 " auto save on
-let g:auto_save = 1  " enable AutoSave on Vim startup, but this conflict with neosnippet
-let g:auto_save_no_updatetime = 1  " do not change the 'updatetime' option
-"let g:auto_save_silent = 1  " do not display the auto-save notification
-"let g:auto_save_events = ["InsertLeave", "TextChanged", "TextChangedI", "CursorHold", "CursorHoldI", "CompleteDone"]
-let g:auto_save_events = ["InsertLeave", "TextChanged"]
+"let g:auto_save = 1  " enable AutoSave on Vim startup, but this conflict with neosnippet
+"let g:auto_save_no_updatetime = 1  " do not change the 'updatetime' option
+""let g:auto_save_silent = 1  " do not display the auto-save notification
+""let g:auto_save_events = ["InsertLeave", "TextChanged", "TextChangedI", "CursorHold", "CursorHoldI", "CompleteDone"]
+"let g:auto_save_events = ["InsertLeave", "TextChanged"]
+
+let g:auto_save = 0  " disable AutoSave on Vim startup, but this conflict with neosnippet
+"autocmd TextChanged,TextChangedI <buffer> silent write
+autocmd TextChanged,TextChangedI * silent write
+
 
 " Edit vimr configuration file
 nnoremap <Leader>ve :e $VIM/vimrc<CR>
 " Reload vimr configuration file
 nnoremap <Leader>vv :source $VIM/vimrc<CR>
-
 
 imap <C-L> <Esc>
 xmap <C-L> <Esc>
@@ -373,4 +374,3 @@ nnoremap k gk
 ":inoremap <Up> <Esc>gk
 "noremap <silent> 0 g0
 "noremap <silent> $ g$
-
