@@ -238,8 +238,6 @@ endif
 
 " Run checktime when gain focus or enter buffer, but avoiding the "Command Line" (q:) window
 au FocusGained,BufEnter * checktime
-" save when exiting the buffer or losing focus
-"au FocusLost,WinLeave * : w
 
 " set wrap in vimdiff
 autocmd FilterWritePre * if &diff | setlocal wrap< | endif
@@ -336,7 +334,9 @@ let Tlist_Close_On_Select = 1
 
 let g:auto_save = 0  " disable AutoSave on Vim startup, but this conflict with neosnippet
 "autocmd TextChanged,TextChangedI <buffer> silent write
-autocmd TextChanged,TextChangedI * silent write
+autocmd TextChanged,InsertLeave * silent write
+" save when exiting the buffer or losing focus
+"au FocusLost,WinLeave * : w
 
 
 " Edit vimr configuration file
