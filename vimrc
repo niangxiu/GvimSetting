@@ -263,8 +263,9 @@ let g:vimtex_view_general_options_latexmk = '-reuse-instance'
 let g:vimtex_quickfix_ignore_filters = [
       \ 'Marginpar on page',
       \ 'Overfull', 'Underfull',
-      \]
-let g:vimtex_quickfix_mode = 1
+      \ 'Missing', 'Entry type'
+  \]
+let g:vimtex_quickfix_mode = 2
 let g:vimtex_quickfix_autoclose_after_keystrokes = 2
 "let g:vimtex_view_enabled = 0
 let g:vimtex_view_automatic = 1
