@@ -7,6 +7,7 @@ git submodule update --recursive
 
 if have trouble update submodules, use:
 git rm --cached modulename
+If still have trouble, just download the submodules from github then copy paste all files to corresponding folder in vimfiles/bundles/
 
 to add a new submodule, use:
 git add <repo> <name>
