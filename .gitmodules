@@ -8,7 +8,7 @@
 
 [submodule "vimfiles/bundle/vimcompletesme"]
     path = "vimfiles/bundle/vimcompletesme"
-    url = https://github.com/ajh17/VimCompletesMe.git
+    url = https://github.com/vim-scripts/VimCompletesMe.git 
 
 [submodule "vimfiles/bundle/autopairs"]
     path = "vimfiles/bundle/autopairs"
