@@ -171,7 +171,7 @@ if has("gui_running")
     set guioptions-=T
     set guioptions-=r
     set guioptions-=L
-    set guifont=consolas:h13
+    set guifont=consolas:h14
 endif
 
 " set short message
@@ -258,8 +258,7 @@ autocmd BufNewFile,BufRead *.tex set iskeyword+=:
 " configuration for vimtex
 let g:vimtex_view_general_viewer = 'SumatraPDF'
 let g:vimtex_view_general_options
-    \ = '-forward-search @tex @line @pdf'
-let g:vimtex_view_general_options_latexmk = '-reuse-instance'
+    \ = '-reuse-instance -forward-search @tex @line @pdf'
 let g:vimtex_quickfix_ignore_filters = [
       \ 'Marginpar on page',
       \ 'Overfull', 'Underfull',
@@ -335,9 +334,9 @@ let Tlist_Close_On_Select = 1
 
 let g:auto_save = 0  " disable AutoSave on Vim startup, but this conflict with neosnippet
 "autocmd TextChanged,TextChangedI <buffer> silent write
-autocmd TextChanged,InsertLeave * silent write
+"autocmd TextChanged,InsertLeave * silent write
 " save when exiting the buffer or losing focus
-"au FocusLost,WinLeave * : w
+au FocusLost,WinLeave * : w
 
 
 " Edit vimr configuration file
@@ -375,3 +374,10 @@ nnoremap k gk
 ":inoremap <Up> <Esc>gk
 "noremap <silent> 0 g0
 "noremap <silent> $ g$
+
+nnoremap <C-A> A
+nnoremap f dd
+
+nnoremap <C-F> <Esc>:wq<Cr>
+vnoremap <C-F> <Esc>:wq<Cr>
+inoremap <C-F> <Esc>:wq<Cr>

@@ -7,4 +7,5 @@ vim82/
 vim90/
 addons/
 registry/
+vimfiles/bundle/*
 *.bak
